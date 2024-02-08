@@ -1,0 +1,592 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Recursive&display=PT+Sans&display=Gowun+Batang&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 230vh;
+    position: relative;
+    
+}
+
+
+/* header */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'PT Sans', sans-serif;
+    width: 100%;
+    height: 90px;
+    position: sticky;
+    position: -webkit-sticky;
+    z-index: 10000;
+    top:0;
+    color: white;
+    background:linear-gradient(rgb(188, 186, 187), rgb(253, 253, 253));
+}
+.nav_items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.nav_item{
+    list-style:none;
+    margin-right:17px;
+}
+.nav_item a , .brand a{
+    text-decoration: none;
+    color: rgb(37, 35, 37);
+    font-family: 'recursive';
+    
+}
+.brand a{
+    color: rgb(83, 81, 83);
+}
+.nav_item span{
+    color:wheat;
+    border:solid 2px black;
+    font-weight: bold;
+    position: relative;
+    top:-23px;
+    background-color: rgb(10, 10, 10);
+    border-radius: 40px;
+    padding:2px
+}
+.icon{
+    width: 25px;
+}
+
+.brand{
+    font-size: 2.5rem;
+    
+}
+
+/*footer*/
+footer{
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    bottom:0;
+    text-align: center;
+    color:rgb(197, 191, 191);
+   
+    
+}
+
+/*loginform*/
+.loginform{
+    width: 500px;
+    height: 500px;
+    margin:auto;
+    background-color: rgb(85, 75, 75);
+    color:white;
+    padding:40px 140px;
+    
+}
+#ue-label, #name, #email{
+    display: block;
+}
+.loginbtn{
+    display: block;
+}
+
+
+
+/*cart*/
+.container,.container1 , .container3, .ship{
+    width: 1000px;
+    height: 400px;
+    margin: 50px auto;
+    
+}
+.container{
+    height: 100vh;
+}
+.container2{
+    width: 1000px;
+    margin:10px auto;
+  
+   
+.qty{
+    width: 80px;
+    height: 35px;
+  
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+}
+}
+.cart{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 25px;
+}
+.username{
+    font-family: 'recursive' , sans-serifs;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.card{
+    display: grid;
+    grid-template-columns: 220px 110px 50px 70px; 
+    margin-right: 5px;
+    padding:15px;
+    border-radius: 20px;
+    background-color:  rgb(228, 224, 225);
+    margin-bottom: 10px;
+    font-family: 'recursive' , sans-serif;
+   
+}
+.noitem{
+    font-family: 'recursive' , sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.noti{
+    color:red;
+}
+
+
+
+.cancelbtn , .buybtn{
+    width: 80px;
+    height: 30px;
+
+
+
+    margin-bottom: 10px;
+}
+.cancelbtn{
+    background-color: rgb(54, 53, 53);
+    color:white;
+   
+    padding: 3px;
+    box-shadow: 0 0 5px rgb(43, 40, 41);
+    border-radius: 10px;
+}
+.cancelbtn:hover{
+    opacity: .5;
+}
+.buybtn{
+    background-color: rgb(12, 12, 12);
+    width: 130px;
+    height: 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgb(47, 46, 47);
+    color:rgb(253, 251, 253);
+    margin-top: 10px;
+    border: solid 2px white;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+.buybtn:hover{
+    transform:perspective(300px) translateZ(50px);
+    background-color: transparent;
+    color:rgb(16, 16, 16);
+    border: none;
+    border: solid 2px black;
+}
+.total{
+    position: fixed;
+    bottom: 20px;
+    width:100%;
+    min-height: 170px;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    padding-top: 15px;
+    color:rgb(55, 10, 49);
+    font-family: 'PT Sans', sans-serif;
+   
+}
+.totalPrice, .totalitem{
+    display: grid;
+    grid-template-columns: 150px 140px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    position:relative;
+    left: 40%;
+
+}
+
+
+/*ship*/
+.ship{
+    width: 100%;
+    height: 200px;
+    text-align: center;
+}
+/*info*/
+.info{
+    z-index: 1000;
+    margin-left: 10px;
+}
+.payment{
+    accent-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.radio{
+    margin-right: 10px;
+}
+.choose{
+    margin-right:30px;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+/*items*/
+.items{
+    width: 1000px;
+    height: 600px;
+    background-color: red;
+    padding:30px;
+   
+    
+}
+.item{
+    width: 800px;
+    height: 250px;
+    background-color: black;
+    box-shadow: 0 0 5px rgb(85, 20, 20);
+    color:white;
+    margin: auto;
+    margin-bottom: 20px;
+    padding:20px;
+}
+.items img{
+    width: 20%;
+    height: 80%;
+    position: relative;
+    right: -550px;
+    top:-140px;
+  
+    border-radius:20px ;
+}   
+.name{
+    font-size: 2rem;
+}
+
+.allitems{
+   
+   
+    display: grid;
+    padding: 40px;
+    color: rgb(57, 55, 55);
+    grid-template-columns: 310px 310px 310px;
+ 
+}
+.allitem{
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    border:solid 1px gray;
+    transition: transform .4s ease;
+    margin-bottom: 20px;
+    padding:20px;
+    font-family: 'Gowun Batang', serif;
+    border-radius: 10px;
+}
+.allitem:hover{
+    box-shadow: 0 0 5px rgb(85, 20, 20);
+}
+.allitem img{
+    width: 60%;
+    height: 50%;
+    position: relative;
+    right: -40px;
+    bottom: -20px;
+    border-radius:20px ;
+}
+.alladdbtn input:hover{
+    background-color: rgb(249, 247, 247);
+    border:solid 2px violet;
+}
+.allname{
+    font-size: 1.2rem;
+    height: 70px;
+    
+}
+.rating{
+  
+    display: grid;
+    grid-template-columns:120px 1fr;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+
+}
+.rating span{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.qty{
+    width: 80px;
+    height: 35px;
+  
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+}
+.more{
+    text-decoration:none;
+}
+/*details*/
+.photo{
+    width: 20%;
+    height: 30%;
+}
+.container{
+    text-align: center;
+    
+}
+.name, .paragraph{
+    margin-bottom: 20px;
+   
+}
+.name{
+    margin-top: 20px;
+    font-family: 'recursive' , sans-serif;
+}
+
+.addbtn{
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgb(54, 53, 53);
+    color:white;
+    border: none;
+    margin-bottom: 15px;
+    position: relative;
+    left: -50px;
+}
+.addbtn:hover{
+    background-color: white;
+    color: black;
+    border:dashed 2px rgb(54, 53, 53);
+}
+
+.paragraph{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.paragraph p{
+    font-size: 1.2rem;
+    line-height: 28px;
+    font-family: 'Gowun Batang', serif;
+    text-align: left;
+   margin-right: 50px;
+  
+}
+.scent{
+    border-left: dashed 2px gray;
+    padding-left: 50px;
+}
+.notes{
+    margin-bottom: 15px;
+   
+}
+.policy{
+    border:solid 1px gray;
+    padding: 30px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    line-height: 25px;
+}
+.policy-title{
+    margin-bottom: 10px;
+}
+.return{
+    margin-bottom: 20px;
+}
+.price{
+    display: inline;
+    width: 100px;
+    position: relative;
+    left: -30px;
+}
+/*ship*/
+.ship{
+    padding: 50px;
+}
+.shipaddress{
+    margin-bottom: 30px;
+}
+.homebtn{
+    margin-top: 50px;
+    background-color: purple;
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 1px rgb(27, 3, 27);
+}
+.homebtn:hover{
+    background-color: rgb(222, 40, 222);
+}
+.homebtn a{
+    text-decoration: none;
+    color:wheat;
+
+}
+
+/*history*/
+.cover{
+    width: 400px;
+    height: 500px;
+    
+}
+
+.covername{
+    position: relative;
+    bottom:0px;
+    right: -10px;
+    font-size: 1.5rem;
+    font-family: 'recursive' , sans-serif;
+  
+    text-shadow: 0 0 2px rgb(236, 142, 158);
+    font-weight: 600px;
+   
+    
+}
+.describe{
+    margin-top: 30px;
+    line-height: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*carousel*/
+.main{
+    width: 900px;
+    height: 400px;
+    margin:auto;
+   font-family: 'recursive' , sans-serif;
+   
+}
+.carousel{
+    background-color: rgb(228, 206, 249);
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+    filter:blur(80%)
+
+}
+.gendergp{
+    display: grid;
+    grid-template-columns: 1fr 150px 150px;
+   
+}
+.gendergp p{
+    position: relative;
+    top:27px;
+
+}
+.gender{
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top:3px;
+    accent-color: black;
+}
+.category{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.car-brand{
+    display: grid;
+    grid-template-columns: 1fr 200px 100px;
+    margin-left: 29px;
+    margin-top:17px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: rgb(57, 55, 55);
+}
+.text{
+    height: 30px;
+    padding: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: solid 1px rgb(159, 157, 157);
+}
+
+.searchbtn{
+    height: 30px;
+    padding: 4px;
+    background-color: rgb(54, 53, 53);
+    color:white;
+    border-radius: 10px;
+    font-family: 'recursive', sans-serif;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+.searchbtn:hover{
+    opacity: .5;
+}
+
+
+.box input{
+    width: 120px;
+    height: 40px;
+    background-color: rgb(239, 234, 239);
+    text-align: center;
+    padding:10px;
+    border-radius: 20px;
+    border: solid 1px gray;
+    font-size: 1rem;
+    color:rgb(62, 61, 62)
+}
+/*brand identity*/
+
+.brand-des{
+    width: 800px;
+    height: 100px;
+    position: relative;
+    left: 100px;
+    transform: perspective(30px) translateZ(5px);
+    color: rgb(27, 26, 26);
+    border-top-color: black;
+    padding:13px;
+    
+    border-radius: 10px;
+}
+.brand-name{
+    font-family: 'recursive', sans-serif;
+    margin-bottom: 5px;
+}
+.brand-info{
+    font-family: 'Gowun Batang', serif;
+    color: rgb(57, 54, 54);
+    line-height: 20px;
+}
+/*forgender*/
+.forgender{
+    position: relative;
+    bottom: -30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.forgender a{
+    color:rgb(10, 10, 10);
+    text-shadow: 0 0 18px black;
+}
