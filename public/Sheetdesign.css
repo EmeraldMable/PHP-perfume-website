@@ -9,7 +9,11 @@ body{
     min-height: 100vh;
     position: relative;
     overflow-y: auto;
+    
   
+}
+::-webkit-scrollbar{
+    width: 0;
 }
 /* header */
 nav{
@@ -26,11 +30,11 @@ nav{
 }
 
 .nav_items{
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-around;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+   
 }
 .nav_item{
 
@@ -78,6 +82,24 @@ nav{
 .brand{
     font-size: 2.5rem;
     
+}
+/*hamburger*/
+.hamburger{
+    width: 50px;
+    height: 35px;
+    background-color: rgb(152, 148, 148);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 13px;
+}
+.hamburger span{
+    width: 40px;
+    height: 3px;
+    background-color: white;
+    border-radius: 30px;
 }
 
 /*footer*/
@@ -190,6 +212,8 @@ footer{
    grid-template-columns: 1fr 1fr;
    grid-template-rows: 50px 50px 50px;
     margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .brand{
     position: relative;
@@ -472,7 +496,7 @@ footer{
     
 }
 .video{
-     width: 90%;
+     width: 50%;
      border-radius: 10px;
 }
 /*history*/
@@ -628,10 +652,88 @@ textarea::placeholder{
     color:white;
     font-size: 1rem;
 }
+/*register & login*/
+.container6{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(211, 208, 208);
+    
+}
+.loginform{
+    min-height: 400px;
+    background-color: white;
+    border: solid 2px gray;
+    border-radius: 30px;
+    padding: 40px;
+    font-size: 1.2rem;
+}
+.field{
+    min-height: 50px;
+    font-family: 'PT Sans', sans-serif;
+    accent-color: gray;
+}
+.field .input{
+    float: right;
+    width: 200px;
+    height: 20px;
+    border-radius: 10px;
+    padding: 10px;
+   
+}
+.warning{
+    color:red;
+    height: 10px;
+    margin-top: 5px;
+    text-align: right;
+    font-size: 1rem;
+}
+.warningAll{
+    color:red;
+    height: 10px;
+    margin-bottom: 25px;
+    text-align: right;
+    font-size: 1rem;
+    font-family: 'PT Sans', sans-serif;
+}
+.registerbtn{
+    padding: 10px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.loginbtn{
+    padding: 10px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.loginbtn:hover{
+    opacity: .5;
+}
+.alreadyRegister{
+    min-height: 20px;
+    margin-top: 30px;
+    display: flex;
+}
+.alreadyRegister a{
+    color:black;
+    text-decoration: underline black;
+}
 
 
 
-@media (1024px>width>=658px){
+
+@media (980px>width>=658px){
+    .nav_items{
+        display: flex;
+    }
     .allitems{
         display: grid;
         grid-template-columns:310px 310px;
@@ -645,6 +747,9 @@ textarea::placeholder{
        
         margin:2px 30px;
         
+    }
+    .hamburger{
+        display: none;
     }
     .category{
         display: grid;
@@ -699,7 +804,13 @@ textarea::placeholder{
 }
 
 
-@media (1380px>width >1024px){
+@media (1024px>width>=980px){
+    .hamburger{
+        display: none;
+    }
+    .nav_items{
+        display: flex;
+    }
     .allitems{
         display: grid;
         grid-template-columns:310px 310px 310px;
@@ -715,10 +826,9 @@ textarea::placeholder{
         
     }
     .category{
-        display:flex;
-        align-items: center;
-        justify-content: space-around;
-        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px 50px;
     }
     .car-brand{
         
@@ -745,7 +855,7 @@ textarea::placeholder{
         left:25%;
     }
     .video{
-        width: 80%;
+        width: 50%;
     }
     .describe{
         margin:10px 120px;
@@ -775,13 +885,118 @@ textarea::placeholder{
 }
 
 
+@media (1380px>width>=1024px){
+    nav{
+         top:-90px;
+    }
+    .nav_items{
+        display: flex;
+    }
+    .hamburger{
+        display: none;
+    }
+    .allitems{
+        display: grid;
+        grid-template-columns:310px 310px 310px ;
+        column-gap: 20px;
+    }
+   
+    .gen{
+        display: inline;
+        margin-left: 30px;
+    }
+    .brand-des{
+       
+        margin:2px 60px;
+        
+    }
+    .category{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px 50px;
+        margin-bottom: 20px;
+    }
+    .username{
+        
+        margin-left: 70px;
+       
+    }
+    .car-brand{
+        
+        margin-left: 700px;
+        
+    }
+    .photo{
+        width: 30%; 
+        transform: translateX(100%);
+       
+    }
+    .paragraph{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .scent{
+        border-left: dashed 2px gray;
+        padding-left: 10px;
+    }
+    .productname{
+        font-size: 2rem;
+    }
+    .cart{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 25px;
+    }
+    .total{
+        left:30%;
+    }
+  
+    .video{
+     
+        width: 50%;
+    }
+    .describe{
+        margin:10px 130px;
+    }
+    
+    .review{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: 30px;
+        gap:20px;
+       
+    }
+    textarea{
+        background-color: rgb(153, 151, 151);
+        color:white;
+        padding:10px;
+        border-radius: 10px;
+        font-size: 1rem;
+        margin-left: 50px;
+        width: 1000px;
+    }
+    .sendbtn{
+        margin-left: 56px;
+    }
+   
+ 
+}
+
+
 @media (width>=1380px){
     nav{
          top:-90px;
     }
+    .nav_items{
+        display: flex;
+    }
+    .hamburger{
+        display: none;
+    }
     .allitems{
         display: grid;
-        grid-template-columns:310px 310px 310px 310px;
+        grid-template-columns:310px 310px 310px 310px ;
         column-gap: 20px;
     }
    
@@ -838,7 +1053,7 @@ textarea::placeholder{
     .video{
       margin-top: 30px;
        margin-left: 150px;
-        width: 50%;
+        width: 100%;
     }
     .describe{
         margin:10px 130px;

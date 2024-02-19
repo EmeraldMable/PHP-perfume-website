@@ -42,29 +42,44 @@ mysqli_close($conn);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/stylesheet.css">
+    <link rel="stylesheet" href="./public/Sheetdesign.css">
     <title>Login page</title>
 </head>
 <body>
+    <div class="container6">
+    <div class="brand">ODOR</div>
     <form class="loginform" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-         <p><?php echo htmlspecialchars ($errors)?></p>
-        <label id="ue-label" for="username">Username: </label>
-        <input id="name" type="text" name="name" placeholder="<?php echo $name ? $name : 'Enter your username'  ?>">
-      
+    <p class="warningAll"><?php echo htmlspecialchars ($errors)?></p>
+        <div class="field">
+           
+            <label class="label" for="username">Username: </label>
+            <input class="input" id="name" type="text" name="name" placeholder="<?php echo $name ? $name : 'Enter your username'  ?>">
+           
 
-        <label  for="email">Email: </label>
-        <input id="email" type="email" name="email" placeholder="<?php echo $email ? '' : 'Enter your email' ?>">
+        </div>
+        
+        <div class="field">
+            <label class="label"  for="email">Email: </label>
+            <input class="input" id="email" type="email" name="email" placeholder="<?php echo $email ? '' : 'Enter your email' ?>">
+        
+        </div>
        
 
-
-        <label id="ue-label" for="password">Password: </label>
-        <input id="password" type="text" name="password" placeholder="<?php echo $password ? $password : 'Enter your password' ?>">
-     
-
-       
-       
+        <div class="field">
+        <label class="label" for="password">Password: </label>
+        <input class="input" id="password" type="text" name="password" placeholder="<?php echo $password ? $password : 'Enter your password' ?>">
+        </div>
 
         <input class="loginbtn" type="submit" name="loginbtn" value="Login">
+
+
+        <div class="alreadyRegister">
+            <p class="alreadyText">Don't have an account?</p>
+            <a href="register.php">Create one</a>
+        </div>
     </form>
+
+    </div>
+    
 </body>
 </html>

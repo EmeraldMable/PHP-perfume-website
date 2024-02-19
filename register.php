@@ -57,7 +57,11 @@
         }else{
             $errors['confirm'] = "Required.";
         }
-      
+        if(empty($_POST['gender'])){
+           
+            $errors['gender'] = "Choose one.";
+            
+        }
 
 
         if(!array_filter($errors)){
@@ -100,49 +104,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/stylesheet.css">
+    <link rel="stylesheet" href="./public/Sheetdesign.css">
     <title>Login page</title>
 </head>
 <body>
+    <div class="container6">
+    <div class="brand">ODOR</div>
     <form class="loginform" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-        <label id="ue-label" for="username">Username: </label>
-        <input id="name" type="text" name="username" placeholder="<?php echo $name ? '' : 'Enter your username'  ?>">
-        <p><?php echo htmlspecialchars ($errors['name'])?></p>
-
-        <label for="number">Phone number: </label>
-        <input id="number" type="text" name="number" placeholder="<?php echo $number ? '' : '0983737383' ?>">
-        <p><?php echo htmlspecialchars ($errors['number'])?></p>
-
-        <label  for="email">Email: </label>
-        <input id="email" type="email" name="email" placeholder="<?php echo $email ? '' : 'Enter your email' ?>">
-        <p><?php echo htmlspecialchars ($errors['email'])?></p>
-        <p><?php echo htmlspecialchars (!$alreadyExit ? '' : $alreadyExit)?></p>
-
-        <label id="ue-label" for="address">Address: </label>
-        <input id="address" type="text" name="address" placeholder="<?php echo $address ? '' : 'Enter your address' ?>">
-        <p><?php echo htmlspecialchars ($errors['address'])?></p>
-
-        <label id="ue-label" for="password">Password: </label>
-        <input id="password" type="text" name="password" placeholder="<?php echo $password ? '' : 'Create a password' ?>">
-        <p><?php echo htmlspecialchars ($errors['password'])?></p>
-
-        <label id="ue-label" for="confirm">Confirm your password: </label>
-        <input id="confirm" type="text" name="confirm" placeholder="<?php echo $confirm ? '' : 'Re-type your password' ?>">
-        <p><?php echo htmlspecialchars ($errors['confirm'])?></p>
-
-        <label id="ue-label" for="Gender">Gender: </label>
-        <input id="Gender" type="radio" name="gender" placeholder="<?php echo $gender ? '' : 'Choose one.' ?>">
-        Male
-        <input id="Gender" type="radio" name="gender" placeholder="<?php echo $gender ? '' : 'Choose one.' ?>">
-        Female
-        <input id="Gender" type="radio" name="gender" placeholder="<?php echo $gender ? '' : 'Choose one.' ?>">
-        Don't want to say
-        <p><?php echo htmlspecialchars ($errors['gender'])?></p>
-
-
+        <div class="field">
+            <label class="label" for="username">Username: </label>
+            <input class="input" id="name" type="text" name="username" placeholder="<?php echo $name ? '' : 'Enter your username'  ?>">
+            <p class="warning"><?php echo htmlspecialchars ($errors['name'])?></p>
+        </div>
+        
+        <div class="field">
+            <label class="label" for="number">Phone number: </label>
+            <input class="input"  id="number" type="text" name="number" placeholder="<?php echo $number ? '' : '0983737383' ?>">
+            <p class="warning"><?php echo htmlspecialchars ($errors['number'])?></p>
+        </div>
+        
+        <div class="field">
+            <label class="label" for="email">Email: </label>
+            <input  class="input"  id="email" type="email" name="email" placeholder="<?php echo $email ? '' : 'Enter your email' ?>">
+            <p class="warning"><?php echo htmlspecialchars ($errors['email'])?></p>
+            <p class="warning"><?php echo htmlspecialchars (!$alreadyExit ? '' : $alreadyExit)?></p>
+        </div>
        
+        <div class="field">
+            <label class="label" for="address">Address: </label>
+            <input class="input"  id="address" type="text" name="address" placeholder="<?php echo $address ? '' : 'Enter your address' ?>">
+            <p class="warning"><?php echo htmlspecialchars ($errors['address'])?></p>
+        </div>
+       
+        <div class="field">
+            <label class="label" for="password">Password: </label>
+            <input class="input"  id="password" type="text" name="password" placeholder="<?php echo $password ? '' : 'Create a password' ?>">
+            <p class="warning"><?php echo htmlspecialchars ($errors['password'])?></p>
+        </div>
+       
+        <div class="field">
+            <label class="label" for="confirm">Confirm your password: </label>
+            <input class="input"  id="confirm" type="text" name="confirm" placeholder="<?php echo $confirm ? '' : 'Re-type your password' ?>">
+            <p class="warning"><?php echo htmlspecialchars ($errors['confirm'])?></p>
+        </div>
+        
+        <div class="field">
+            <label class="label" for="Gender">Gender: </label>
+            <input id="Gender" type="radio" name="gender" placeholder="<?php echo $gender ? '' : 'Choose one.' ?>">
+            Male
+            <input id="Gender" type="radio" name="gender" placeholder="<?php echo $gender ? '' : 'Choose one.' ?>">
+            Female
+            <input id="Gender" type="radio" name="gender" placeholder="<?php echo $gender ? '' : 'Choose one.' ?>">
+            Don't want to say
+            <p class="warning"><?php echo htmlspecialchars ($errors['gender'])?></p>
+        </div>
+        
+        <input class="registerbtn" type="submit" name="registerbtn" value="Register">
 
-        <input class="loginbtn" type="submit" name="registerbtn" value="Register">
+        <div class="alreadyRegister">
+            <p class="alreadyText">Already have an account?</p>
+            <a href="login.php">Login here</a>
+        </div>
     </form>
+    </div>
+    
 </body>
 </html>

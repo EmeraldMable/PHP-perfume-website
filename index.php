@@ -77,7 +77,7 @@ mysqli_close($conn);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/stylesheet.css">
+    <link rel="stylesheet" href="./public/Sheetdesign.css">
     
     <title>Index Page</title>
 </head>
