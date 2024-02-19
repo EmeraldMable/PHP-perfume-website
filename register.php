@@ -1,8 +1,8 @@
 <?php
 
    
-    $errors = array("name" => "" , "number" => "" , "email" => "" , "address" => "" , "password" => "" , "confirm" => "");
-    $name = $email =$userid =  $number = $address = $password = $confirm= $alreadyExit = $registerid = '';
+    $errors = array("name" => "" , "number" => "" , "email" => "" , "address" => "" , "password" => "" , "confirm" => "" , "gender" => "");
+    $name = $email =$userid =  $number = $address = $password = $confirm= $alreadyExit = $registerid = $gender = '';
     $users = array();
 
     include('connection.php');
@@ -129,6 +129,16 @@
         <label id="ue-label" for="confirm">Confirm your password: </label>
         <input id="confirm" type="text" name="confirm" placeholder="<?php echo $confirm ? '' : 'Re-type your password' ?>">
         <p><?php echo htmlspecialchars ($errors['confirm'])?></p>
+
+        <label id="ue-label" for="Gender">Gender: </label>
+        <input id="Gender" type="radio" name="gender" placeholder="<?php echo $gender ? '' : 'Choose one.' ?>">
+        Male
+        <input id="Gender" type="radio" name="gender" placeholder="<?php echo $gender ? '' : 'Choose one.' ?>">
+        Female
+        <input id="Gender" type="radio" name="gender" placeholder="<?php echo $gender ? '' : 'Choose one.' ?>">
+        Don't want to say
+        <p><?php echo htmlspecialchars ($errors['gender'])?></p>
+
 
        
 

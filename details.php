@@ -10,7 +10,7 @@ $name = $_SESSION['username'] ?? '';
 $sql = "SELECT customerId from customers where customerName = '$name'";
 $result = mysqli_query($conn, $sql);
 $id = mysqli_fetch_all($result, MYSQLI_ASSOC);
-$customerid = $id[0]['customerId'];
+$customerid = $id[0]['customerId']??'';
 $_SESSION['customerId']=$customerid;
 $_SESSION['exit'] = $already;
 
@@ -70,7 +70,13 @@ $_SESSION['exit'] = $already;
     <title>Details</title>
 </head>
 <body>
-    <?php include('header.php') ?>
+<?php  if(isset($_SESSION['username'])){
+       include_once('header.php');
+    }else{
+        include_once('headerLogin.php');
+        
+    }
+    ?>
 
     <div class="container">
         <form action="details.php" method="post">

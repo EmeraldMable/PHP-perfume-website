@@ -14,7 +14,13 @@ session_start();
     <title>History</title>
 </head>
 <body>
-    <?php  include('header.php')  ?>
+    <?php  if(isset($_SESSION['username'])){
+       include_once('header.php');
+    }else{
+        include_once('headerLogin.php');
+        
+    }
+    ?>
 
     <div class="container4">
         <video class="video" controls autoplay muted loop src="public/Riza Perfume - Cinematic Perfume Commercial - Eau De Perfume - Digicomm India.mp4"></video>

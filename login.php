@@ -22,7 +22,7 @@
                 session_start();
                 $_SESSION['username'] = $username;
                 $_SESSION['userid'] = $userid;
-                header('location: products.php');
+                header('location: index.php');
                 
             }else{
                 $errors = 'Please register first.';

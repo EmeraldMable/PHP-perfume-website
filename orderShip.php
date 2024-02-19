@@ -18,7 +18,7 @@
         <h2 class="shipaddress">Your Order is shipped to <?php echo $address?></h2>
         <h3>Thanks for shopping with us , <?php echo $username ?></h3>
         <button class="homebtn">
-            <a href="products.php">Back to homepage</a>
+            <a href="index.php">Back to homepage</a>
         </button>
     </div>
     <?php include('footer.php')?>

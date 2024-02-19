@@ -1,5 +1,5 @@
 <?php  
-
+    $name = '';
     $brandId= '';
     $brand='All Items';
     $des = 'We collect most recommended perfumes and colognes aiming to save your time searching for star-rated perfumes.
@@ -82,8 +82,14 @@ mysqli_close($conn);
     <title>Index Page</title>
 </head>
 <body>
-    <?php  include('header.php')  ?>
-    <h2 class="username">Hello <?php echo $name ? $name : '' ?></h2>
+    <?php  if(isset($_SESSION['username'])){
+       include_once('header.php');
+    }else{
+        include_once('headerLogin.php');
+        
+    }
+    ?>
+    <h2 class="username">Hello Dear <?php echo $name ? $name : 'Guest' ?></h2>
    
     <div class="container2">
    
@@ -110,7 +116,11 @@ mysqli_close($conn);
                </div>
                <img src="data:image/jpg;base64,<?php echo base64_encode($product['image'])?>" alt="Perfume bottle">
                <div class="forgender">
+                    <?php if(isset($_SESSION['username'])){ ?>
                     <a class="more" href="details.php?id=<?php echo $product['productId']?>">More info</a>
+                    <?php }else{?>
+                        <a class="more" href="login.php">More info</a>
+                    <?php }?>
                     <p class="gen">For <strong><?php echo $product['gender'] ?></strong></p>
                </div>
            </div>

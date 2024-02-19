@@ -14,58 +14,11 @@
     include('connection.php');
   
 
-    $sql = "SELECT * from cart where customerId = '$customerid' ";
-    $result = mysqli_query($conn,$sql);
-
-    if(mysqli_num_rows($result)>0){
-        $carts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        
-    }else{
-       $nodb ='No item is added yet.';
-    }
-
-    /*if(isset($_GET['id'])){
-        if($productid = mysqli_real_escape_string($conn,$_GET['id'])){
-           
-            $sql = "ALTER TABLE `cart` ADD UNIQUE(`productId`)";
-            $delete = mysqli_query($conn, $sql);
-            $productid =  mysqli_real_escape_string($conn,$_GET['id']);
-        }
-    }*/
-
-
-
-
-  if(isset($_POST['cancelbtn'])){
-    $cartid = $_POST['cartid'];
-    $delete = "DELETE from cart where cartid = '$cartid'";
-
-   $del = mysqli_query($conn,$delete);
-  }
-
-  if(isset($_POST['buybtn'])){
-    if(!empty($_POST['payment'])){
-        if(!$carts){
-            $emptycart = 'No item is in the cart';
-        }else{
-            $delete = "DELETE from cart";
-            $del = mysqli_query($conn,$delete);
-            header('location: orderShip.php'); 
-        }
-           
-    }else{
-        $choosePayment = 'Please choose one payment.';
-     }
-    
-    
-  }
-   
-
 
     if(isset($_POST['increase'])){
         $qtyid = $_POST['qtyid'];
         $cartqty = $_POST['cartqty'];
-        $sql = "UPDATE `cart` SET `cartqty` = $cartqty + 1 WHERE `cart`.`cartid` = $qtyid";
+        $sql = "UPDATE `cart` SET `cartqty` = $cartqty + 1 WHERE cart.cartid = $qtyid";
         $addition = mysqli_query($conn, $sql);
     }else if(isset($_POST['decrease'])){
              if($_POST['cartqty'] == 1){
@@ -82,6 +35,43 @@
         
     }
 
+
+  if(isset($_POST['cancelbtn'])){
+    $cartid = $_POST['cartid'];
+    $delete = "DELETE from cart where cartid = '$cartid'";
+    $del = mysqli_query($conn,$delete);
+  }
+
+ 
+   
+
+  $sql = "SELECT * from cart where customerId = '$customerid' ";
+  $result = mysqli_query($conn,$sql);
+
+  if(mysqli_num_rows($result)>0){
+      $carts = mysqli_fetch_all($result, MYSQLI_ASSOC);
+      
+  }else{
+     $nodb ='No item is added yet.';
+  }
+
+  
+  if(isset($_POST['buybtn'])){
+    if(!empty($_POST['payment'])){
+        if(!$carts){
+            $emptycart = 'No item is in the cart';
+        }else{
+            $delete = "DELETE from cart";
+            $del = mysqli_query($conn,$delete);
+            header('location: orderShip.php'); 
+        }
+           
+    }else{
+        $choosePayment = 'Please choose one payment.';
+     }
+    
+    
+  }
     
     
          
@@ -109,7 +99,6 @@
         
        
         <p class="noitem"><?= $nodb?></p>
-        <p><?= $already ?></p>
         <div class="cart">
             <?php foreach($carts as $cart){?>
       
@@ -124,7 +113,7 @@
                    <input type="submit" name="increase" value="+"></p>
                   
             
-              </form>
+                </form>
               
            
                 <p class="price"><?php  echo $totalAll[] = $cart['cartprice']* $cart['cartqty'] ?>000 Kyats</p>
@@ -136,6 +125,7 @@
                         <input type="hidden" name="cartid" value="<?php echo $cart['cartid']?>">
                         
                         <input class="cancelbtn" type="submit" name="cancelbtn" value="Remove">
+                    </form>
                 </div>
 
              </div>
@@ -168,7 +158,7 @@
             </form>
             
           </div>
-          </form>
+         
 
     <?php  include('footer.php')  ?>
 </body>
