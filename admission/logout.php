@@ -3,7 +3,7 @@
     session_start();
     
     session_destroy();
-    header('location: register.php');
+    header('location: ../admission/register.php');
 
     
 

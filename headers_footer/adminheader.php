@@ -19,7 +19,7 @@
           
             <li class="nav_item"><a href="../mainpages/history.php">Our History</a></li>
             <li class="nav_item"><a href="../mainpages/dashboard.php">Dashboard</a></li>
-            <li class="nav_item"><a href='../mainpages/logout.php'>Log Out</a></li>
+            <li class="nav_item"><a href='../admission/logout.php'>Log Out</a></li>
         </ul>
     </nav>
 </body>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+$adminemail =$_SESSION['adminemail'] ?? '';
 ?>
 
 
@@ -10,23 +11,23 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/Sheetdesign.css">
+    <link rel="stylesheet" href="../public/Sheetdesign.css">
     <title>History</title>
 </head>
 <body>
     <?php  if(isset($_SESSION['username'])){
                 if($adminemail){
-                    include_once('./headers_footer/adminheader.php');
+                    include_once('../headers_footer/adminheader.php');
                 }else{
-                    include_once('./headers_footer/header.php');
+                    include_once('../headers_footer/header.php');
                 }
             }else{
-                include_once('./headers_footer/headerLogin.php');
+                include_once('../headers_footer/headerLogin.php');
             }
     ?>
 
     <div class="container4">
-        <video class="video" controls autoplay muted loop src="public/Riza Perfume - Cinematic Perfume Commercial - Eau De Perfume - Digicomm India.mp4"></video>
+        <video class="video" controls autoplay muted loop src="../public/Riza Perfume - Cinematic Perfume Commercial - Eau De Perfume - Digicomm India.mp4"></video>
         <div>
         <p class="covername">ODOR</p>
        
@@ -35,6 +36,6 @@ session_start();
         </div>
         
     </div>
-    <?php  include('./headers_footer/footer.php')  ?>
+    <?php  include('../headers_footer/footer.php')  ?>
 </body>
 </html>

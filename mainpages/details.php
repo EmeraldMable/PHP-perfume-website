@@ -4,9 +4,10 @@ $customerid ='';
 $productId = '';
 $return = '';
 $already = '';
-include('./connection.php');
+include('../connection.php');
 session_start();
 $name = $_SESSION['username'] ?? '';
+$adminemail = $_SESSION['adminemail']??'';
 $sql = "SELECT customerId from customers where customerName = '$name'";
 $result = mysqli_query($conn, $sql);
 $id = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -44,12 +45,12 @@ $_SESSION['exit'] = $already;
                 if($sql){
                     if(array_filter($return)){
                       
-                       header('location: cart.php');
+                       header('location: ../mainpages/cart.php');
                     }else{
                         $sql = "INSERT INTO cart (customerId,productId,cartname, cartprice , cartqty) VALUES ('$customerid','$productid','$cartname', '$cartprice' , '$cartqty' )";
         
                         $result = mysqli_query($conn,$sql);
-                        header('location: cart.php');
+                        header('location: ../mainpages/cart.php');
                        
                     }
                 }
@@ -66,18 +67,18 @@ $_SESSION['exit'] = $already;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/stylesheet.css">
+    <link rel="stylesheet" href="../public/Sheetdesign.css">
     <title>Details</title>
 </head>
 <body>
     <?php  if(isset($_SESSION['username'])){
                 if($adminemail){
-                    include_once('./headers_footer/adminheader.php');
+                    include_once('../headers_footer/adminheader.php');
                 }else{
-                    include_once('./headers_footer/header.php');
+                    include_once('../headers_footer/header.php');
                 }
             }else{
-                include_once('./headers_footer/headerLogin.php');
+                include_once('../headers_footer/headerLogin.php');
             }
     ?>
 
@@ -129,6 +130,6 @@ $_SESSION['exit'] = $already;
 
     </div>
    
-    <?php include('./headers_footer/footer.php')?>
+    <?php include('../headers_footer/footer.php')?>
 </body>
 </html>

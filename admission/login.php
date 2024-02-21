@@ -6,7 +6,7 @@
 
     
    
-    include('connection.php');
+    include('../connection.php');
     if(isset($_POST['loginbtn'])){
         if(!empty($_POST['name']) && !empty($_POST['password'])){
             
@@ -26,12 +26,12 @@
                 $name = $data[0]['customerName'];
                 $userid = $data[0]['customerId'];
                 
-                header('location: index.php');
+                header('location: ../mainpages/index.php');
             } else if(array_filter($admindata)){
                 $name = $admindata[0]['adminName'];
                 $adminemail = $admindata[0]['adminEmail'];
                 
-                header('location: index.php');
+                header('location: ../mainpages/index.php');
                 
             }else{
 
@@ -60,7 +60,7 @@ mysqli_close($conn);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/Sheetdesign.css">
+    <link rel="stylesheet" href="../public/Sheetdesign.css">
     <title>Login page</title>
 </head>
 <body>
@@ -93,7 +93,7 @@ mysqli_close($conn);
 
         <div class="alreadyRegister">
             <p class="alreadyText">Don't have an account?</p>
-            <a href="register.php">Create one</a>
+            <a href="../admission/register.php">Create one</a>
         </div>
     </form>
 

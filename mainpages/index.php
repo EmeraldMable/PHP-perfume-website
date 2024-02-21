@@ -12,7 +12,7 @@
     $adminemail = $_SESSION['adminemail']?? '';
 
 
-    include('./connection.php');
+    include('../connection.php');
 
     
 
@@ -80,26 +80,26 @@ mysqli_close($conn);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/Sheetdesign.css">
+    <link rel="stylesheet" href="../public/Sheetdesign.css">
     
     <title>Index Page</title>
 </head>
 <body>
     <?php  if(isset($_SESSION['username'])){
                 if($adminemail){
-                    include_once('./headers_footer/adminheader.php');
+                    include_once('../headers_footer/adminheader.php');
                 }else{
-                    include_once('./headers_footer/header.php');
+                    include_once('../headers_footer/header.php');
                 }
             }else{
-                include_once('./headers_footer/headerLogin.php');
+                include_once('../headers_footer/headerLogin.php');
             }
     ?>
     <h2 class="username">Hello Dear <?php echo $name ? $name : 'Guest' ?></h2>
    
     <div class="container2">
    
-       <?php include('./components/category.php') ?>
+       <?php include('../components/category.php') ?>
             <div class="brand-des">
                 <h2 class="brand-name"><?= $brand  ?></h2>
                 <p class="brand-info"><?= $des ?></p>
@@ -134,8 +134,8 @@ mysqli_close($conn);
          </div>
          
     </div>
-    <?php include('./components/review.php'); ?>
-    <?php include('./headers_footer/footer.php')?>
+    <?php include('../components/review.php'); ?>
+    <?php include('../headers_footer/footer.php')?>
  
 </body>
 </html>
