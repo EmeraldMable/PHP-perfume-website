@@ -96,10 +96,29 @@ nav{
     border-radius: 13px;
 }
 .hamburger span{
-    width: 40px;
+    width: 30px;
     height: 3px;
     background-color: white;
     border-radius: 30px;
+    
+}
+.hamburger:hover span{
+    background-color: rgb(196, 188, 188);
+    animation: twinkling 2s infinite forwards;
+}
+@keyframes twinkling{
+    0%{
+        background-color: white;
+    }
+    50%{
+        background-color:rgb(136, 134, 134) ;
+    }
+    80%{
+        background-color:rgb(60, 59, 59) ;
+    }
+    100%{
+        background-color: white;
+    }
 }
 
 /*footer*/

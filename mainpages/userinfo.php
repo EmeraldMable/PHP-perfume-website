@@ -5,7 +5,7 @@
       session_start();
       $name = $_SESSION['username'] ?? '';
     
-     include('connection.php');
+      include('./connection.php');
       $sql = "SELECT * from customers where customerName = '$name'";
       $result = mysqli_query($conn, $sql);
       $info = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -35,7 +35,7 @@
     <title>Document</title>
 </head>
 <body>    
-    <?php include('header.php')?>
+    <?php  include('./headers_footer/header.php')  ?>
     <div class="container5">
         <div class="contact">
             <p class="info-name">Name : <?php echo !$info[0]['customerName'] ? '' : $info[0]['customerName']?></p>
@@ -55,6 +55,6 @@
         </div>
     </div>
         
-        
+    <?php include('./headers_footer/footer.php')?>
 </body>
 </html>

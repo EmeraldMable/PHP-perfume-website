@@ -4,7 +4,7 @@ $customerid ='';
 $productId = '';
 $return = '';
 $already = '';
-include('connection.php');
+include('./connection.php');
 session_start();
 $name = $_SESSION['username'] ?? '';
 $sql = "SELECT customerId from customers where customerName = '$name'";
@@ -70,12 +70,15 @@ $_SESSION['exit'] = $already;
     <title>Details</title>
 </head>
 <body>
-<?php  if(isset($_SESSION['username'])){
-       include_once('header.php');
-    }else{
-        include_once('headerLogin.php');
-        
-    }
+    <?php  if(isset($_SESSION['username'])){
+                if($adminemail){
+                    include_once('./headers_footer/adminheader.php');
+                }else{
+                    include_once('./headers_footer/header.php');
+                }
+            }else{
+                include_once('./headers_footer/headerLogin.php');
+            }
     ?>
 
     <div class="container">
@@ -126,6 +129,6 @@ $_SESSION['exit'] = $already;
 
     </div>
    
-    <?php include('footer.php')?>
+    <?php include('./headers_footer/footer.php')?>
 </body>
 </html>

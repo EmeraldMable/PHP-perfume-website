@@ -1,13 +1,29 @@
+<?php
+session_start();
+?>
+
+
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./public/stylesheet.css">
+    <link rel="stylesheet" href="./public/Sheetdesign.css">
     <title>History</title>
 </head>
 <body>
-    <?php  include('adminheader.php')  ?>
+    <?php  if(isset($_SESSION['username'])){
+                if($adminemail){
+                    include_once('./headers_footer/adminheader.php');
+                }else{
+                    include_once('./headers_footer/header.php');
+                }
+            }else{
+                include_once('./headers_footer/headerLogin.php');
+            }
+    ?>
 
     <div class="container4">
         <video class="video" controls autoplay muted loop src="public/Riza Perfume - Cinematic Perfume Commercial - Eau De Perfume - Digicomm India.mp4"></video>
@@ -19,6 +35,6 @@
         </div>
         
     </div>
-    <?php  include('footer.php')  ?>
+    <?php  include('./headers_footer/footer.php')  ?>
 </body>
 </html>

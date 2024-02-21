@@ -12,7 +12,7 @@ $name = '';
         $send = mysqli_query($conn,$query);
         $return = mysqli_fetch_assoc($send);
         
-        $id = $return['customerId'];
+        $id = $return['customerId'] ?? '';
         
         $sql = "SELECT * from cart where customerId = '$id' ";
         $result = mysqli_query($conn,$sql);
@@ -42,18 +42,18 @@ $name = '';
 
     <nav>
         
-        <div class="brand"><a href="index.php">ODOR</a></div>
+        <div class="brand"><a href="../mainpages/index.php">ODOR</a></div>
         <div class="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
         <ul class="nav_items">
-            <li class="nav_item <?php echo $page == 'index.php' ? 'active' : ''?> "><a href="index.php">Products</a></li>            
-            <li class="nav_item <?php echo $page == 'history.php' ? 'active' : ''?> "><a href="history.php">Our History</a></li>
-            <li class="nav_item"><a href="userinfo.php"><img class="user  <?php echo $page == 'userinfo.php' ? 'active' : ''?> " src="public/user.svg" alt="usericon"></a></li>
-            <li class="nav_item "><a href="cart.php"><img class="icon <?php echo $page == 'cart.php' ? 'active' : ''?>" src="public/cart.svg" alt="cart"></a><span><?php echo mysqli_num_rows($result) ? mysqli_num_rows($result)  : '0' ?></span></li>
-            <li class="nav_item"><a href='logout.php'>Log Out</a></li>
+            <li class="nav_item <?php echo $page == 'index.php' ? 'active' : ''?> "><a href="../mainpages/index.php">Products</a></li>            
+            <li class="nav_item <?php echo $page == 'history.php' ? 'active' : ''?> "><a href="../mainpages/history.php">Our History</a></li>
+            <li class="nav_item"><a href="../mainpages/userinfo.php"><img class="user  <?php echo $page == 'userinfo.php' ? 'active' : ''?> " src="public/user.svg" alt="usericon"></a></li>
+            <li class="nav_item "><a href="../mainpages/cart.php"><img class="icon <?php echo $page == 'cart.php' ? 'active' : ''?>" src="public/cart.svg" alt="cart"></a><span><?php echo mysqli_num_rows($result) ? mysqli_num_rows($result)  : '0' ?></span></li>
+            <li class="nav_item"><a href='../admission/logout.php'>Log Out</a></li>
         </ul>
     </nav>
 </body>

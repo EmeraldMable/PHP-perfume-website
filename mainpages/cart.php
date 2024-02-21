@@ -11,7 +11,7 @@
     $customerid = $_SESSION['userid']?? '';
     $already = $_SESSION['exit']?? '';
     
-    include('connection.php');
+    include('./connection.php');
   
 
 
@@ -92,7 +92,7 @@
     <title>Cart</title>
 </head>
 <body>
-    <?php  include('header.php')  ?>
+    <?php  include('./headers_footer/header.php')  ?>
 
     
     <div class="container3">
@@ -160,7 +160,7 @@
           </div>
          
 
-    <?php  include('footer.php')  ?>
+    <?php  include('./headers_footer/footer.php')  ?>
 </body>
 </html>
 

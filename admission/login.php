@@ -2,7 +2,9 @@
 
    
     $errors = '';
-    $name =  $password = $email=  '';
+    $name =  $password = $email= $adminemail= $userid= '';
+
+    
    
     include('connection.php');
     if(isset($_POST['loginbtn'])){
@@ -16,15 +18,23 @@
             $result = mysqli_query($conn, $sql);
             $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
+            $sql2 = "SELECT * from admin where adminEmail = '$email' and adminPassword = $password ";
+            $result2 = mysqli_query($conn,$sql2);
+            $admindata = mysqli_fetch_all($result2,MYSQLI_ASSOC);
+
             if(array_filter($data)){
-                $username = $data[0]['customerName'];
+                $name = $data[0]['customerName'];
                 $userid = $data[0]['customerId'];
-                session_start();
-                $_SESSION['username'] = $username;
-                $_SESSION['userid'] = $userid;
+                
+                header('location: index.php');
+            } else if(array_filter($admindata)){
+                $name = $admindata[0]['adminName'];
+                $adminemail = $admindata[0]['adminEmail'];
+                
                 header('location: index.php');
                 
             }else{
+
                 $errors = 'Please register first.';
             }
 
@@ -33,6 +43,14 @@
         $errors = 'Please fill in all the fields.';
     }
     }
+
+    session_start();
+               
+            $_SESSION['username'] = $name;
+            $_SESSION['userid'] = $userid;
+            $_SESSION['adminemail'] = $adminemail;
+            
+
     
 mysqli_close($conn);
 ?>

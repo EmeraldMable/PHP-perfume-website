@@ -9,9 +9,12 @@
    
     session_start();
     $name = $_SESSION['username'] ?? '';
-    
+    $adminemail = $_SESSION['adminemail']?? '';
 
-    include('connection.php');
+
+    include('./connection.php');
+
+    
 
     $sql = "SELECT * FROM products INNER JOIN brands ON products.brandId = brands.brandId ";
 
@@ -83,17 +86,20 @@ mysqli_close($conn);
 </head>
 <body>
     <?php  if(isset($_SESSION['username'])){
-       include_once('header.php');
-    }else{
-        include_once('headerLogin.php');
-        
-    }
+                if($adminemail){
+                    include_once('./headers_footer/adminheader.php');
+                }else{
+                    include_once('./headers_footer/header.php');
+                }
+            }else{
+                include_once('./headers_footer/headerLogin.php');
+            }
     ?>
     <h2 class="username">Hello Dear <?php echo $name ? $name : 'Guest' ?></h2>
    
     <div class="container2">
    
-       <?php include('category.php') ?>
+       <?php include('./components/category.php') ?>
             <div class="brand-des">
                 <h2 class="brand-name"><?= $brand  ?></h2>
                 <p class="brand-info"><?= $des ?></p>
@@ -128,8 +134,8 @@ mysqli_close($conn);
          </div>
          
     </div>
-    <?php include('review.php'); ?>
-    <?php include('footer.php')?>
+    <?php include('./components/review.php'); ?>
+    <?php include('./headers_footer/footer.php')?>
  
 </body>
 </html>

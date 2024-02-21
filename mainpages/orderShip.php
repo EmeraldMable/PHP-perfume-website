@@ -13,7 +13,7 @@
     <title>OrderShipped</title>
 </head>
 <body>
-    <?php include('header.php')?>
+    <?php  include('./headers_footer/header.php')  ?>
     <div class="ship">
         <h2 class="shipaddress">Your Order is shipped to <?php echo $address?></h2>
         <h3>Thanks for shopping with us , <?php echo $username ?></h3>
